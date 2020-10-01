@@ -8,7 +8,7 @@ class Buku extends CI_Controller {
         parent ::__construct();
 
         //load model
-        $this->load->model('model_buku'); 
+        $this->load->model('model_data'); 
 
     }
 
@@ -17,7 +17,7 @@ class Buku extends CI_Controller {
         $data = array(
 
             'title'     => 'Data Buku',
-            'data_buku' => $this->model_buku->get_all(),
+            'data_buku' => $this->model_data->get_all(),
 
         );
 
@@ -46,7 +46,7 @@ class Buku extends CI_Controller {
 
         );
 
-        $this->model_buku->simpan($data);
+        $this->model_data->simpan($data);
 
         $this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil disimpan didatabase.
                                                 </div>');
@@ -63,7 +63,7 @@ class Buku extends CI_Controller {
         $data = array(
 
             'title'     => 'Edit Data Buku',
-            'data_buku' => $this->model_buku->edit($id_buku)
+            'data_buku' => $this->model_data->edit($id_buku)
 
         );
 
@@ -82,7 +82,7 @@ class Buku extends CI_Controller {
 
         );
 
-        $this->model_buku->update($data, $id);
+        $this->model_data->update($data, $id);
 
         $this->session->set_flashdata('notif', '<div class="alert alert-success alert-dismissible"> Success! data berhasil diupdate didatabase.
                                                 </div>');
@@ -96,7 +96,7 @@ class Buku extends CI_Controller {
     {
         $id['id_buku'] = $this->uri->segment(3);
 
-        $this->model_buku->hapus($id);
+        $this->model_data->hapus($id);
 
         //redirect
         redirect('buku/');
