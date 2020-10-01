@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_data extends CI_model{
+class Model_buku extends CI_model{
 
     public function get_all()
     {
