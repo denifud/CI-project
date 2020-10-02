@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Daftar Karyawan masih belajar</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <title>Daftar Koleksi Buku</title>
+   <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('bootstrap/css/bootstrap.min.css') ?>">
 </head>
 <body>
     
-
     <div class="container" style="margin-top: 80px">
         <?php echo $this->session->flashdata('notif') ?>
-        <a href="<?php echo base_url() ?>buku/tambah/" class="btn btn-md btn-success">Tambah Data Karyawan</a>
+        <a href="<?php echo base_url() ?>buku" class="btn btn-md btn-success">Home</a>
+    
+    <div class="col-md-12"> <!-- header gambar -->
+ 			<img src="<?php echo base_url('gambar/h1.webp');?>" style="width: 100%;height: 400px;">
+ 		</div> <!-- /header gambar -->
+    
+
+        </div>
+    <div class="container" style="margin-top: 80px">
+        <?php echo $this->session->flashdata('notif') ?>
+        <a href="<?php echo base_url() ?>buku/tambah/" class="btn btn-md btn-success">Tambah Koleksi Buku</a>
         <hr>
         <!-- table -->
         <div class="table-responsive">
@@ -18,10 +27,10 @@
                 <thead>
                   <tr>
                     <th>No.</th>
-                    <th>Id Karyawan</th>
-                    <th>Nama Karyawan</th>
-                    <th>Tanggal Masuk</th>
-                    <th>Jabatan</th>
+                    <th>ID Buku</th>
+                    <th>Judul Buku</th>
+                    <th>Tanggal Terbit</th>
+                    <th>Pengarang</th>
                     <th>Options</th>
                   </tr>
                 </thead>
@@ -61,5 +70,9 @@
     autoFill: true
 } );
 </script>
+
+<div class="container" style="margin-top: 80px"><!-- footer -->
+ 			<div class="alert btn-success text-center">&copy; Copyright Ma'fud Hasim</div>
+ 		</div><!-- footer -->
 </body>
 </html>
